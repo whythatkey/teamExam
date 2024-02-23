@@ -47,4 +47,36 @@ public class DataBase
         CreateFryingPansTable();
     }
 
+    public void AddManufacturer(Manufacturer manufacturer)
+    {
+        _command.CommandText =
+            $@"
+                INSERT INTO Manufacturers(name) VALUES ('{manufacturer.Name}');
+            ";
+        _command.ExecuteNonQuery();
+    }
+    public void AddFryingPan(FryingPan pan)
+    {
+        _command.CommandText =
+        $@"
+                INSERT INTO FryingPans(manufacturer_id, name, price) VALUES ({pan.ManufacturerId}, '{pan.Name}', {pan.Price});
+            ";
+        _command.ExecuteNonQuery();
+    }
+    public void PushManufacturers(IEnumerable<Manufacturer> manufacturers)
+    {
+        foreach (Manufacturer manufacturer in manufacturers)
+        {
+            AddManufacturer(manufacturer);
+        }
+        Console.WriteLine("Manufacturer's push complete!");
+    }
+    public void PushFryingPans(IEnumerable<FryingPan> fryingPans)
+    {
+        foreach(FryingPan fryingPan in fryingPans)
+        {
+            AddFryingPan(fryingPan);
+        }
+        Console.WriteLine("Frying pan's push complete!");
+    }
 }

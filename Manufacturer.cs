@@ -5,9 +5,8 @@ public class Manufacturer
     public int Id { get; set; }
     public string Name { get; set; }
     public Manufacturer() { }
-    public Manufacturer(int id, string name)
+    public Manufacturer(string name)
     {
-        Id = id;
         Name = name;
     }
 }
