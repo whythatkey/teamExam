@@ -49,10 +49,12 @@ public class DataBase
 
     public void AddManufacturer(Manufacturer manufacturer)
     {
+        Console.WriteLine(manufacturer.Name);
         _command.CommandText =
             $@"
                 INSERT INTO Manufacturers(name) VALUES ('{manufacturer.Name}');
             ";
+        Console.WriteLine(_command.CommandText);
         _command.ExecuteNonQuery();
     }
     public void AddFryingPan(FryingPan pan)

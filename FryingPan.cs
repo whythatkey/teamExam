@@ -8,10 +8,11 @@ public class FryingPan
     public int Price { get; set; }
 
     public FryingPan() { }
-    public FryingPan ( int manufacturerId, string name, int price)
+    public FryingPan ( string name, int price)
     {
-        ManufacturerId = manufacturerId;
+       
         Name = name;
         Price = price;
+        ManufacturerId = 1;
     }
 }

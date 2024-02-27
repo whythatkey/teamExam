@@ -413,23 +413,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rm1\\.nuget\\packages\\": {},
+    "C:\\Users\\liubo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rm1\\source\\repos\\FryingPanParser\\FryingPanParser\\FryingPanParser.csproj",
+      "projectUniqueName": "C:\\Users\\liubo\\OneDrive\\Рабочий стол\\WinForms\\TeamExam\\teamExam\\FryingPanParser.csproj",
       "projectName": "FryingPanParser",
-      "projectPath": "C:\\Users\\rm1\\source\\repos\\FryingPanParser\\FryingPanParser\\FryingPanParser.csproj",
-      "packagesPath": "C:\\Users\\rm1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rm1\\source\\repos\\FryingPanParser\\FryingPanParser\\obj\\",
+      "projectPath": "C:\\Users\\liubo\\OneDrive\\Рабочий стол\\WinForms\\TeamExam\\teamExam\\FryingPanParser.csproj",
+      "packagesPath": "C:\\Users\\liubo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\liubo\\OneDrive\\Рабочий стол\\WinForms\\TeamExam\\teamExam\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\rm1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\liubo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -481,7 +481,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
