@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Internal;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace TeamFinalProject
 {
@@ -47,26 +48,20 @@ namespace TeamFinalProject
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
 
             driver.Url = "https://rozetka.com.ua/skovorody/c4626754/#search_text=%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D1%80%D1%96%D0%B4%D0%BA%D0%B0";
-            var findFryingPanName = driver.FindElements(By.ClassName("goods-tile__title"));
-            var findFryingPanPrice = driver.FindElements(By.ClassName("__price-value"));
-            var origText = 0;
-            foreach(var element in findFryingPanName) 
+            var skovorodki = driver.FindElements(By.ClassName("catalog-grid__cell"));
+
+            foreach(var skovorodka in skovorodki)
             {
-                //Console.WriteLine(element.Text);
-                foreach(var price in findFryingPanPrice)
-                {
-                    origText = int.Parse(price.Text);
-                }
-                var fryingPan = new FryingPan($"{element.Text}", origText);
+                var FryingPanNames = skovorodka.FindElement(By.ClassName("goods-tile__title"));
+                var FryingPanPrices = skovorodka.FindElement(By.ClassName("goods-tile__price-value"));
+
+                FryingPanPrices.Text.Replace("'", " ");
+                FryingPanPrices.Text.Replace("?", " ");
+                
+                var fryingPan = new FryingPan($"{FryingPanNames.Text}", int.Parse(FryingPanPrices.Text.Substring(1, FryingPanPrices.Text.Length - 1).Replace("'", "").Replace("?", "")));
                 result.Add(fryingPan);
             }
-            //foreach(var item in fryingPans)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
             return result;
-            
         }
     }
 }
