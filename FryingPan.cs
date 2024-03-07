@@ -8,7 +8,7 @@ public class FryingPan
     public int Price { get; set; }
 
     public FryingPan() { }
-    public FryingPan ( string name, int price)
+    public FryingPan (string name, int price)
     {
        
         Name = name;

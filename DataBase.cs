@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using System.Data;
+using System.Text;
 
 namespace FryingPanParser;
 
@@ -54,7 +55,6 @@ public class DataBase
             $@"
                 INSERT INTO Manufacturers(name) VALUES ('{manufacturer.Name}');
             ";
-        Console.WriteLine(_command.CommandText);
         _command.ExecuteNonQuery();
     }
     public void AddFryingPan(FryingPan pan)
@@ -75,10 +75,13 @@ public class DataBase
     }
     public void PushFryingPans(IEnumerable<FryingPan> fryingPans)
     {
-        foreach(FryingPan fryingPan in fryingPans)
+       
+        foreach (FryingPan fryingPan in fryingPans)
         {
+            Console.WriteLine(fryingPan.Name);
             AddFryingPan(fryingPan);
         }
         Console.WriteLine("Frying pan's push complete!");
     }
+
 }
